@@ -1,14 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import CartItem from './components/CarItem';
-
+import { StyleSheet, View } from "react-native";
+import CarList from './components/CarList'
 
 export default function App() {
   return (
     <View style={styles.container}>
-     <CartItem />
-
+      <CarList />
       <StatusBar style="auto" />
     </View>
   );
@@ -21,5 +19,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
- 
 });

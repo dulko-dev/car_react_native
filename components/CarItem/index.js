@@ -3,18 +3,28 @@ import { View, Text, ImageBackground } from "react-native";
 import styles from "./style";
 import StyledButton from "../StyledButton";
 
-const CartItem = () => {
+const CartItem = ({ title, subTitle, image, subTitleUnderline }) => {
   return (
     <View style={styles.carContainer}>
-      <ImageBackground
-        source={require("../../assets/images/ModelX.jpeg")}
-        style={styles.image}
-      />
+      <ImageBackground source={image} style={styles.image} />
       <View style={styles.titles}>
-        <Text style={styles.title}>Model S</Text>
-        <Text style={styles.subtitle}>Starting at $69,420</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{subTitle}</Text>
+        <Text style={styles.subtitleUnderline}>{subTitleUnderline}</Text>
       </View>
-      <StyledButton type='primary'/>
+
+      <View style={styles.btnContainer}>
+        <StyledButton
+          type="primary"
+          content={"First Button"}
+          onPress={() => console.warn("clicked on first button")}
+        />
+        <StyledButton
+          type="secondary"
+          content={"Second Button"}
+          onPress={() => console.warn("clicked on second button")}
+        />
+      </View>
     </View>
   );
 };
